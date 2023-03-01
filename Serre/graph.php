@@ -54,7 +54,7 @@
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-12">
-                        <h3><b>Tableau de données</b></h3>
+                        <h3><b>Graphique des données</b></h3>
                     </div>
 
                     <div>

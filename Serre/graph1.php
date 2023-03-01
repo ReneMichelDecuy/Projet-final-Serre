@@ -1,33 +1,32 @@
-<?php // content="text/plain; charset=utf-8"
-require_once('jpgraph/src/jpgraph.php');
-require_once('jpgraph/src/jpgraph_line.php');
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
 
-$datay = array(20, 10, 35, 5, 17, 35, 22);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Date', 'Conso Electrique', 'Conso Eau', 'Capt Humidité Intérieur', 'Capt Température Intérieur','Capt Humidité Bac 1','Capt Humidité Bac 2','Capt Humidité Bac 3'],
+          ['2014', 1000, 400, 200, 5, 6, 7, 8],
+          ['2015', 1170, 460, 250, 5, 6, 7, 8],
+          ['2016', 660, 1120, 300, 5, 6, 7, 8],
+          ['2017', 1030, 540, 350, 5, 6, 7, 8]
+        ]);
 
-// Setup the graph
-$graph = new Graph(400, 250);
-$graph->SetScale("intlin", 0, $aYMax = 50);
-$theme_class = new UniversalTheme;
-$graph->SetTheme($theme_class);
+        var options = {
+          chart: {
+            title: 'Consommation Serre',
+          }
+        };
 
-$graph->SetBox(false);
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
-$graph->title->Set('Step Line');
-$graph->ygrid->Show(true);
-$graph->xgrid->Show(false);
-$graph->yaxis->HideZeroLabel();
-$graph->ygrid->SetFill(true, '#FFFFFF@0.5', '#FFFFFF@0.5');
-$graph->SetBackgroundGradient('blue', '#55eeff', GRAD_HOR, BGRAD_PLOT);
-$graph->xaxis->SetTickLabels(array('A', 'B', 'C', 'D', 'E', 'F', 'G'));
-
-// Create the line
-$p1 = new LinePlot($datay);
-$graph->Add($p1);
-
-$p1->SetFillGradient('yellow', 'red');
-$p1->SetStepStyle();
-$p1->SetColor('#808000');
-
-// Output line
-$graph->Stroke();
-?>
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+  </body>
+</html>
