@@ -57,11 +57,13 @@
                         <h3><b>Graphique des données</b></h3>
                     </div>
 
-                    <div>
+                    <div class="graphique">
                         <h3><b>DONNÉE EN TEMPS RÉELLE</b></h3>
-                        <?php
-                        (include 'graph1.php')
-                        ?>
+                        <center>
+                            <?php
+                            (include 'classes/graph1.php')
+                            ?>
+                        </center>
                     </div>
 
 

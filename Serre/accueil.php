@@ -25,7 +25,7 @@
 
 <body data-spy="scroll" data-offset="0" data-target="#navigation">
   <script>
-    const socket = new WebSocket('ws://192.168.64.104:12345');
+    const socket = new WebSocket('ws://192.168.64.93:12345');
 
     socket.onopen = function(event) {
       socket.send('Hello Server!');
