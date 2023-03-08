@@ -133,11 +133,6 @@
         </div>
       </div>
     </section>
-    <div id="copyrights">
-      <div class="credits">
-        Created with Visual studio by Jules Godefroy
-      </div>
-    </div>
 
     <!-- JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>
